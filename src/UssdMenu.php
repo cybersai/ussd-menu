@@ -38,9 +38,8 @@ class UssdMenu
             return range('A','Z')[$index];
         } else if ($numbering == self::NUMBERING_NUMERIC) {
             return $index + 1;
-        } else {
-            return '';
         }
+        return '';
     }
 
     private function isLastPage($page, $numberPerPage, $items)
@@ -105,7 +104,7 @@ class UssdMenu
                             $itemsSeparator = self::ITEMS_SEPARATOR_LINE_BREAK,
                             $numbering = self::NUMBERING_NUMERIC)
     {
-        $this->listParser($items, $page = 1, count($items), $numberingSeparator, $itemsSeparator,
+        $this->listParser($items, 1, count($items), $numberingSeparator, $itemsSeparator,
             $numbering);
         return $this;
     }
