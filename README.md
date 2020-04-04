@@ -1,12 +1,12 @@
 # UssdMenu
 [![Packagist Version](https://img.shields.io/packagist/v/cybersai/ussd-menu?style=for-the-badge)](https://packagist.org/packages/cybersai/ussd-menu)
-[![Travis (.org)](https://img.shields.io/travis/cybersai/ussd-menu?style=for-the-badge)](https://travis-ci.org/cybersai/ussd-menu)
+[![Travis (.com)](https://img.shields.io/travis/cybersai/ussd-menu?style=for-the-badge)](https://travis-ci.com/cybersai/ussd-menu)
 [![GitHub repo size](https://img.shields.io/github/repo-size/cybersai/ussd-menu?style=for-the-badge)](https://github.com/CyberSai/ussd-menu)
 ![GitHub](https://img.shields.io/github/license/cybersai/ussd-menu?style=for-the-badge)
 
 A bare Ussd Menu Object Oriented Builder for common use cases.
 
-No Real Documentaion for now, but for now you can [read the tests](https://github.com/cybersai/ussd-menu/blob/master/tests/UssdMenuTest.php).
+No Real Documentation for now, but for now you can [read the tests](https://github.com/cybersai/ussd-menu/blob/master/tests/UssdMenuTest.php).
 ```php
 include 'vendor/autoload.php';
 
