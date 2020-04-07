@@ -47,7 +47,6 @@ class UssdMenu
         return $page * $numberPerPage >= count($items);
     }
 
-
     private function pageStartIndex($page, $numberPerPage)
     {
         return $page * $numberPerPage - $numberPerPage;
@@ -77,12 +76,12 @@ class UssdMenu
         return new self();
     }
 
-    public static function from($text)
+    public static function title($text)
     {
         return new self($text);
     }
 
-    public function lineBreak($number = 1)
+    public function space($number = 1)
     {
         $this->menu .= str_repeat("\n", $number);
         return $this;
@@ -100,7 +99,7 @@ class UssdMenu
         return $this;
     }
 
-    public function listing($items, $numberingSeparator = self::NUMBERING_SEPARATOR_DOT,
+    public function list($items, $numberingSeparator = self::NUMBERING_SEPARATOR_DOT,
                             $itemsSeparator = self::ITEMS_SEPARATOR_LINE_BREAK,
                             $numbering = self::NUMBERING_NUMERIC)
     {
@@ -109,7 +108,7 @@ class UssdMenu
         return $this;
     }
 
-    public function paginateListing($items, $page = 1, $numberPerPage = 5,
+    public function paginateList($items, $page = 1, $numberPerPage = 5,
                                     $numberingSeparator = self::NUMBERING_SEPARATOR_DOT,
                                     $itemsSeparator = self::ITEMS_SEPARATOR_LINE_BREAK,
                                     $numbering = self::NUMBERING_NUMERIC)

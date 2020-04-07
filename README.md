@@ -12,22 +12,22 @@ include 'vendor/autoload.php';
 
 use Cybersai\UssdMenu\UssdMenu;
 
-echo UssdMenu::from('Raw Text') // Create a new Instance with that string
-    ->lineBreak(2) // Append Double linebreak
-    ->line('Here comes a list') // Append new text with linebreak
-    ->listing(['Superman', 'Batman', 'IronMan']) // List array using default options
-    ->lineBreak() // Append a linebreak
-    ->text('Bye'); // Finally Append text;
+echo UssdMenu::title('Welcome to AppName') // create a new instance with a title
+    ->space(2) // append double space
+    ->list(['Airtime', 'Data', 'Utility', 'Contact Us']) // list array using default options
+    ->space(2) // append double space
+    ->text('Powered by AppName'); // show text;
 ```
 ```text
 // Output
-Raw Text
+Welcome to AppName
 
-Here comes a list
-1.Superman
-2.Batman
-3.IronMan
-Bye
+1.Airtime
+2.Data
+3.Utility
+4.Contact Us
+
+Powered by AppName
 ```
 
 ## Installation

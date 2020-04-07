@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Cybersai\UssdMenu\Tests;
-
 
 use Cybersai\UssdMenu\UssdMenu;
 use PHPUnit\Framework\TestCase;
@@ -15,35 +13,35 @@ class UssdMenuTest extends TestCase
     }
     public function testCanBeCreatedFromValidString()
     {
-        $this->assertInstanceOf(UssdMenu::class, UssdMenu::from('Hello Ussd'));
+        $this->assertInstanceOf(UssdMenu::class, UssdMenu::title('Hello Ussd'));
     }
 
     public function testCanBeUsedAsString()
     {
-        $this->assertEquals('Hello Ussd', UssdMenu::from('Hello Ussd'));
+        $this->assertEquals('Hello Ussd', UssdMenu::title('Hello Ussd'));
     }
 
     public function testCanBeConvertedToStringExplicitly()
     {
-        $this->assertEquals('Hello Ussd', UssdMenu::from('Hello Ussd')->toString());
+        $this->assertEquals('Hello Ussd', UssdMenu::title('Hello Ussd')->toString());
     }
 
-    public function testCanHaveLineBreak()
+    public function testCanHaveSpaces()
     {
-        $this->assertEquals("\n", UssdMenu::instance()->lineBreak());
+        $this->assertEquals("\n", UssdMenu::instance()->space());
     }
 
-    public function testCanHaveDoubleLineBreak()
+    public function testCanHaveDoubleSpaces()
     {
-        $this->assertEquals("\n\n", UssdMenu::instance()->lineBreak(2));
+        $this->assertEquals("\n\n", UssdMenu::instance()->space(2));
     }
 
-    public function testCanHaveTextWithLineBreak()
+    public function testCanHaveTextWithSpace()
     {
         $this->assertEquals("Hello Ussd\n", UssdMenu::instance()->line("Hello Ussd"));
     }
 
-    public function testCanHaveTextWithNoLineBreak()
+    public function testCanHaveTextWithNoSpace()
     {
         $this->assertEquals("Hello Ussd", UssdMenu::instance()->text("Hello Ussd"));
     }
@@ -51,18 +49,18 @@ class UssdMenuTest extends TestCase
     public function testCanParseAListToString()
     {
         $this->assertEquals("1.New Gen\n2.Old Gen",
-            UssdMenu::instance()->listing(['New Gen', 'Old Gen']));
+            UssdMenu::instance()->list(['New Gen', 'Old Gen']));
     }
 
     public function testCanPaginateAndParseAListToString()
     {
         $this->assertEquals("3.Extra",
-            UssdMenu::instance()->paginateListing(['New Gen', 'Old Gen', 'Extra'], 2, 2));
+            UssdMenu::instance()->paginateList(['New Gen', 'Old Gen', 'Extra'], 2, 2));
     }
 
     public function testMethodCanBeChained()
     {
         $this->assertEquals("Hello Ussd\n1.Ok\n2.Fine\nBye",
-            UssdMenu::instance()->line('Hello Ussd')->listing(['Ok', 'Fine'])->lineBreak()->text('Bye'));
+            UssdMenu::instance()->line('Hello Ussd')->list(['Ok', 'Fine'])->space()->text('Bye'));
     }
 }
